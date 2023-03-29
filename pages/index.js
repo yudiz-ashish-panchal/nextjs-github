@@ -1,21 +1,15 @@
-import React,{useState} from 'react'
+import React from 'react'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { useRouter } from 'next/router'
+import Layout from '../components/layout'
+import Form from '../components/form'
+import { Container } from 'react-bootstrap'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const router = useRouter() 
-  const [search, setSearch] = useState("");
-  const handleChange = (e) => {
-    setSearch(e.target.value);
-  };
-  function handleSubmit(e) {
-    e.preventDefault()
-    router.push({pathname:`/containdata`,query: {data:search}});
-  }
+
   return (
     <>
       <Head>
@@ -25,12 +19,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-      <form action="" onSubmit={(e)=>handleSubmit(e)}>
-        <input type="text" value ={search} onChange={(e) => handleChange(e)} />
-        <button >
-            submit
-        </button>
-      </form>
+        <Layout>
+          <Container>
+          <Form/>
+          </Container>
+        </Layout>
     </div>
     </>
   )

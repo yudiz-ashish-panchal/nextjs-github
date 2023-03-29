@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Layout from "../components/layout";
 
 
 function Containdata({userData}) {
-console.log('data', userData)
-
+  console.log('userData', userData)
+ 
   return (
     <>
-    {
-      userData?.message
-    }
+      <Layout>
+    <div>
+      {userData?.message ? userData?.message:""}
+      {userData?.public_repos}
+    </div>
+      </Layout>
     </>
   );
 }
@@ -20,7 +24,7 @@ export async function getServerSideProps({query}) {
   console.log('params', data)
   const res = await fetch(`https://api.github.com/users/${data}`);
   const userData = await res.json();
-
+  
   return {
     props: {
       userData,
