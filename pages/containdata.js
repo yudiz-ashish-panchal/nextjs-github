@@ -1,16 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Layout from "../components/layout";
-
-
+import styles from "../styles/ContainData.module.scss"
+import { useRouter } from "next/router";
+import Link from "next/link";
+import Repo from "./repo";
 function Containdata({userData}) {
-  console.log('userData', userData)
- 
+
+  const router = useRouter()
+
   return (
     <>
       <Layout>
-    <div>
-      {userData?.message ? userData?.message:""}
-      {userData?.public_repos}
+        <div className={styles.containdata}>
+    <div className={styles.containdata_image}>
+      <img src={userData?.avatar_url} alt="userImage" width={300} height={300} />
+      <h3>UserName: {userData?.login}</h3>
+      <h4>Public Repo : {userData?.public_repos}</h4>
+      <Link href="/emoji"> Get GitHub Emoji</Link>
+    </div>
+    <div className={styles.containdata_repos}>
+    <Repo userName={userData?.login} url={userData?.repos_url}/>
+    </div>
     </div>
       </Layout>
     </>

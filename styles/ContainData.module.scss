@@ -1,0 +1,24 @@
+.containdata{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    overflow: auto;
+    &_image{
+        line-height: 20px;
+        letter-spacing: .5px;
+        img{
+            padding: 10px;
+            border: 1px solid black;
+        }
+        
+        h3{
+            margin: 0;
+        }
+        h4{
+            margin: 0;
+        }
+    }
+    &_repos{
+        border:1px solid black;
+    }
+    }
