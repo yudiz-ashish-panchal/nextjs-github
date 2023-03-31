@@ -5,10 +5,10 @@ function CommonImage({url}) {
   return (
     <>
       {
-        url?.map((data)=>{
+        url?.map((data,index)=>{
             return (
                 <>
-                <img src={data} alt="image" />
+                <img src={data} alt={index} />
                 </>
             )
         })

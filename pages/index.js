@@ -1,15 +1,13 @@
-import React from 'react'
-import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import Layout from '../components/layout'
-import Form from '../components/form'
-import { Container } from 'react-bootstrap'
-
-const inter = Inter({ subsets: ['latin'] })
+import React from "react";
+import Head from "next/head";
+import { Inter } from "next/font/google";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Layout from "../components/layout";
+import Form from "../components/form";
+import { Container } from "react-bootstrap";
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-
   return (
     <>
       <Head>
@@ -21,10 +19,10 @@ export default function Home() {
       <div>
         <Layout>
           <Container>
-          <Form/>
+            <Form />
           </Container>
         </Layout>
-    </div>
+      </div>
     </>
-  )
+  );
 }

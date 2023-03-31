@@ -1,24 +1,32 @@
-.containdata{
+.containdata {
     display: flex;
     padding: 10px;
-    justify-content: space-between;
+    justify-content: space-around;
     overflow: auto;
-    &_image{
+
+    &_image {
         line-height: 20px;
         letter-spacing: .5px;
-        img{
+
+        img {
             padding: 10px;
             border: 1px solid black;
         }
-        
-        h3{
+
+        h3 {
             margin: 0;
         }
-        h4{
+
+        h4 {
             margin: 0;
         }
     }
-    &_repos{
-        border:1px solid black;
+
+    &_repos {
+        border: 1px solid black;
     }
+
+    &_link {
+        text-decoration: none;
     }
+}

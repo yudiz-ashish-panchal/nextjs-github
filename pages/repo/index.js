@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
+import styles from "../../styles/Repo.module.scss"
 function Repo({userName,url}) {
     const [repoUrl,setRepoUrl] = useState([])
     console.log('repoUrl', repoUrl)
@@ -15,12 +16,12 @@ function Repo({userName,url}) {
     },[])
   return (
     <>
-        <div>
-            {repoUrl?.map((repos)=>{
+        <div className={styles.repo}>
+            {repoUrl?.map((repos,index)=>{
                 return (
                     <>
-                    <h4>{repos?.name}</h4>
-                    <Link href={`${repos?.html_url}`}>{repos?.html_url}</Link>
+                    <h4>{index} ) {repos?.name}</h4>
+                    <Link href={`${repos?.html_url}`} className={styles.repo_link}>{repos?.html_url}</Link>
                     </>
 
                 )

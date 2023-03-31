@@ -1,9 +1,13 @@
 .navbarDiv{
+    padding: 5px;
     background-color: rgb(94, 94, 225);
     &_navbar{
         display: flex;  
         align-items: center;
         justify-content: end;
         gap: 20px;
+    }
+    h3{
+        font-weight: normal;
     }
 }
